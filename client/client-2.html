@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>html-2</title>
+  </head>
+  <body>
+    <h1>2:----</h1>
+    <script>
+      // window.addEventListener('storage',(e)=>{
+      //   window.testWindow = e
+      //   console.log(e,'@@@')
+      //   alert('store-change')
+      // })
+      const b= new BroadcastChannel('notice')
+      b.onmessage = (m)=>{
+        console.log(m.data)
+      }
+    </script>
+  </body>
+</html>

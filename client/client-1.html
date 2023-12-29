@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>html-1</title>
+  </head>
+  <body>
+    <h1>1:----</h1>
+    <iframe src="http://127.0.0.1:5502/client/client-center.html" frameborder="10" width="400" height="400" id="center"></iframe>
+    <script>
+      const ifra = document.getElementById('center')
+      setTimeout(()=>{
+        ifra.contentWindow.postMessage('from-client-1.html','http://127.0.0.1:5502/client/client-center.html')
+      },2000)
+    </script>
+  </body>
+</html>
