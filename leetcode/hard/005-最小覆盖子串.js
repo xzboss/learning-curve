@@ -63,3 +63,41 @@
 
 
 // 最优解 看不懂!
+/**
+ * @param {string} s
+ * @param {string} t
+ * @return {string}
+ */
+var minWindow = function(s, t) {
+    let l = 0,r = 0, match = 0, start = 0, minLen = s.length + 1;
+    const map = {}
+    for (let c of t) {
+        map[c] ? map[c]++ : map[c] = 1
+    }
+    const count = Object.keys(map).length
+    while (r < s.length) {
+        const c = s[r]
+        if (map[c] !== undefined) {
+            map[c]--
+        }
+        if (map[c] === 0) {
+            match++
+        }
+        r++
+        while (count === match) {
+            if (r - l < minLen) {
+                minLen = r - l
+                start = l
+            }
+            const c2 = s[l]
+            if (map[c2] != undefined) {
+                map[c2]++
+            }
+            if (map[c2] > 0) {
+                match--
+            }
+            l++
+        }
+    }
+    return minLen === s.length + 1 ? "" : s.substr(start, minLen)
+};
