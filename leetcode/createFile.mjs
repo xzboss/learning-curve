@@ -13,7 +13,7 @@ const map = {
 }
 // 确保命令的格式正确
 if (args.length !== 2 || !map[args[0]]) {
-  console.error('用法: npm run create e/m/h exampleName');
+  console.error('用法: yarn run e/m/h exampleName');
   process.exit(1);
 }
 
@@ -33,11 +33,11 @@ const testName = `${args[0]}_${fileName.split('.')[0]}.test.js`
 const filePath = path.join(folderPath, fileName);
 const testPath = path.join('test',testName)
 
-fs.writeFile(filePath, '\n\n\n\n\n\n\nmodule.exports = ', (err) => {
+fs.writeFile(filePath, '\n\n\n\n\n\n\n\n\n\n\n\n\n//module.exports = ', (err) => {
   if (err) throw err;
   console.log(`文件 ${fileName} 已成功创建在 ${folderPath} 文件夹下`);
 });
-fs.writeFile(testPath, `const fun = require('../${map[args[0]]}/${fileName}');\ntest('${fileName.split('.')[0]}', () => {\n\texpect(fun()).toBe()\n})`, (err) => {
+fs.writeFile(testPath, `const fun = require('../${map[args[0]]}/${fileName}');\ntest('${args[0]}_${fileName.split('.')[0]}', () => {\n\texpect(fun()).toBe()\n})`, (err) => {
   if (err) throw err;
   console.log(`文件 ${testName} 已成功创建在 ${testPath} 文件夹下`);
 });
