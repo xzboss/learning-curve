@@ -13,7 +13,7 @@ const map = {
 }
 // 确保命令的格式正确
 if (args.length !== 2 || !map[args[0]]) {
-  console.error('用法: yarn run e/m/h exampleName');
+  console.error('用法: yarn c e/m/h exampleName');
   process.exit(1);
 }
 
