@@ -5,15 +5,15 @@ function test(func) {
   console.log(end - start)
 }
 // speed fast -> slow
-test(() => {
-  const arr = new Array(10000000).fill('0')
-})
-test(() => {
-  const arr = new Array(10000000)
-  for (let i = 0; i < 10000000; i++) {
-    arr[i] = 0
-  }
-})
+// test(() => {
+//   const arr = new Array(10000000).fill('0')
+// })
+// test(() => {
+//   const arr = new Array(10000000)
+//   for (let i = 0; i < 10000000; i++) {
+//     arr[i] = 0
+//   }
+// })
 // test(() => {
 //   const arr = new Array(10000000).fill('0')
 //   for (let i = 0; i < 1000000; i++) {
@@ -30,3 +30,15 @@ test(() => {
 //     if (arr[i] === 999999) break
 //   }
 // })
+test(()=>{
+  let a = 4
+  for (let i = 0; i < 100000000; i++) {
+    if(a === 4){}
+  }
+})
+test(()=>{
+  let a = 4
+  for (let i = 0; i < 100000000; i++) {
+    a = 9
+  }
+})
