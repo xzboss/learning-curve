@@ -28,10 +28,16 @@ const fileIndex = existingFiles.filter(file => file.endsWith('.js')).length + 1;
 const formattedIndex = fileIndex.toString().padStart(3, '0');
 
 const fileName = `${formattedIndex}-${exampleName}.js`;
+const testName = `${args[0]}_${fileName.split('.')[0]}.test.js`
 
 const filePath = path.join(folderPath, fileName);
+const testPath = path.join('test',testName)
 
-fs.writeFile(filePath, '', (err) => {
+fs.writeFile(filePath, '\n\n\n\n\n\n\nmodule.exports = ', (err) => {
   if (err) throw err;
   console.log(`文件 ${fileName} 已成功创建在 ${folderPath} 文件夹下`);
+});
+fs.writeFile(testPath, `const fun = require('../${map[args[0]]}/${fileName}');\ntest('${fileName.split('.')[0]}', () => {\n\texpect(fun()).toBe()\n})`, (err) => {
+  if (err) throw err;
+  console.log(`文件 ${testName} 已成功创建在 ${testPath} 文件夹下`);
 });

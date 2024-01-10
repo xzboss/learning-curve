@@ -1,7 +1,6 @@
 {
   "name": "leetcode",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "scripts": {
     "test": "jest",
@@ -9,5 +8,9 @@
   },
   "type": "module",
   "author": "xuzhou",
-  "license": "ISC"
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "jest": "^29.7.0"
+  }
 }
