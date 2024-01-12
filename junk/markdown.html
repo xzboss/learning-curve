@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script defer src="https://cdn.jsdelivr.net/npm/markdown-it@14.0.0/dist/markdown-it.min.js"></script>
+</head>
+<body>
+  <div class="app"></div>
+  <script defer>
+    console.log(window)
+    setTimeout(()=>{
+      const md = new markdownit();
+
+      // 要渲染的 Markdown 文本
+      const markdownText = `#### 1.1 tianwen项目部署到test
+正常发布提交，不需要打包
+1. 在gitlab合并到testing
+2. jumpserver中sudo deployer build tianwen-1-test site repeat/sing-for-love
+3. sudo deployer deploy tianwen-1-test
+4. ok`;
+
+      // 使用 MarkdownIt 渲染 Markdown 文本为 HTML
+      const html = md.render(markdownText);
+
+      // 获取要插入 HTML 的容器元素
+      const container = document.querySelector('.app');
+      container.innerHTML = html
+    },1000)
+    
+    
+
+  </script>
+</body>
+</html>
