@@ -30,15 +30,46 @@ function test(func) {
 //     if (arr[i] === 999999) break
 //   }
 // })
-test(()=>{
-  let a = 4
-  for (let i = 0; i < 100000000; i++) {
-    if(a === 4){}
-  }
-})
-test(()=>{
-  let a = 4
-  for (let i = 0; i < 100000000; i++) {
-    a = 9
-  }
-})
+
+// test(()=>{
+//   let a = 4
+//   for (let i = 0; i < 100000000; i++) {
+//     if(a === 4){}
+//   }
+// })
+// test(()=>{
+//   let a = 4
+//   for (let i = 0; i < 100000000; i++) {
+//     a = 9
+//   }
+// })
+
+
+
+// test(()=>{
+//   var map = function(char){
+//     switch(char){
+//       case ')':return '('
+//       case ']':return '['
+//       case '}':return '{'
+//     }
+//   }
+//   for (let i = 0; i < 1000000000; i++) {
+//     if(map('{')){
+//       continue
+//     }
+//   }
+// })
+//win
+// test(()=>{
+//   var map = {
+//     ')':'(',
+//     ']':'[',
+//     '}':'{',
+//   }
+//   for (let i = 0; i < 1000000000; i++) {
+//     if(map['{']){
+//       continue
+//     }
+//   }
+// })
