@@ -23,9 +23,9 @@
 输出：[8,9,9,9,0,0,0,1]
  */
 
-function ListNode(val, next) {
-    this.val = (val===undefined ? 0 : val)
-    this.next = (next===undefined ? null : next)
+function ListNode (val, next) {
+	this.val = (val === undefined ? 0 : val)
+	this.next = (next === undefined ? null : next)
 }
 
 /**
@@ -33,21 +33,41 @@ function ListNode(val, next) {
  * @param {ListNode} l2
  * @return {ListNode}
  */
-var addTwoNumbers = function(l1, l2) {
-
+var addTwoNumbers = function (l1, l2) {
+	let head = {}
+	let pointer = head
+	let isCarry = 0
+	while (l1 || l2 || isCarry) {
+		const sum = (l1 ? l1.val : 0) + (l2 ? l2.val : 0) + isCarry
+		isCarry = (sum / 10) >> 0
+		pointer.next = new ListNode(isCarry ? sum % 10 : sum)
+		if (!head.next) {
+			head.next = pointer
+		}
+		pointer = pointer.next
+		l1 = l1 && l1.next
+		l2 = l2 && l2.next
+	}
+	return head.next
 };
 
 
-
-
-const node1 = new ListNode(1)
-const node2 = new ListNode(2)
+const node1 = new ListNode(2)
+const node2 = new ListNode(4)
 const node3 = new ListNode(3)
-const node4 = new ListNode(4)
+
+const node11 = new ListNode(5)
+const node22 = new ListNode(6)
+// const node33 = new ListNode(4)
+
 node1.next = node2
 node2.next = node3
-node3.next = node4
-node4.next = node1
-console.log(addTwoNumbers(node1))
+node11.next = node22
+// node22.next = node33/
+let head = addTwoNumbers(node1, node11)
+while (head) {
+	console.log(head)
+	head = head.next
+}
 
 //module.exports = 
