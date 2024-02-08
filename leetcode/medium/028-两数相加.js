@@ -63,7 +63,7 @@ const node22 = new ListNode(6)
 node1.next = node2
 node2.next = node3
 node11.next = node22
-// node22.next = node33/
+// node22.next = node33/·
 let head = addTwoNumbers(node1, node11)
 while (head) {
 	console.log(head)
