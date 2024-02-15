@@ -21,7 +21,7 @@ random_index：随机指针指向的节点索引（范围从 0 到 n-1）；如�
  * // Definition for a Node.
  * function Node(val, next, random) {
  *    this.val = val;
- *    this.next = next;
+ *    this.next = next
  *    this.random = random;
  * };
  */
