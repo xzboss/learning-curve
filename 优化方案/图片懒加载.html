@@ -1,148 +1,126 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-  </head>
-  <style>
-    .container {
-      width: 100px;
-      height: 600px;
-      border: 1px solid red;
-      overflow-y: auto;
-    }
 
-    img {
-      border: 2px solid peru;
-      width: 100px;
-      height: 200px;
-    }
-  </style>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+</head>
+<style>
+  .container {
+    width: 100px;
+    height: 600px;
+    border: 1px solid red;
+    overflow-y: auto;
+  }
 
-  <body>
-    <div class="container">
-      <img
-        class="lazy"
-        data-src="https://res.cdn.changbaimg.com/asset/yunying/anniversary-anchor2023/bg-header.ab7855bd.png" />
-      <img
-        class="lazy"
-        data-src="https://res.cdn.changbaimg.com/asset/yunying/anniversary-anchor2023/bg-header.ab7855bd.png" />
-      <img
-        class="lazy"
-        data-src="https://res.cdn.changbaimg.com/asset/yunying/anniversary-anchor2023/bg-header.ab7855bd.png" />
-      <img
-        class="lazy"
-        data-src="https://res.cdn.changbaimg.com/asset/yunying/anniversary-anchor2023/bg-header.ab7855bd.png" />
-      <img
-        class="lazy"
-        data-src="https://res.cdn.changbaimg.com/asset/yunying/anniversary-anchor2023/bg-header.ab7855bd.png" />
-      <img
-        class="lazy"
-        data-src="https://res.cdn.changbaimg.com/asset/yunying/anniversary-anchor2023/bg-header.ab7855bd.png" />
-      <img
-        class="lazy"
-        data-src="https://res.cdn.changbaimg.com/asset/yunying/anniversary-anchor2023/bg-header.ab7855bd.png" />
-      <img
-        class="lazy"
-        data-src="https://res.cdn.changbaimg.com/asset/yunying/anniversary-anchor2023/bg-header.ab7855bd.png" />
-      <img
-        class="lazy"
-        data-src="https://res.cdn.changbaimg.com/asset/yunying/anniversary-anchor2023/bg-header.ab7855bd.png" />
-      <img
-        class="lazy"
-        data-src="https://res.cdn.changbaimg.com/asset/yunying/anniversary-anchor2023/bg-header.ab7855bd.png" />
-      <img
-        class="lazy"
-        data-src="https://res.cdn.changbaimg.com/asset/yunying/anniversary-anchor2023/bg-header.ab7855bd.png" />
-      <img
-        class="lazy"
-        data-src="https://res.cdn.changbaimg.com/asset/yunying/anniversary-anchor2023/bg-header.ab7855bd.png" />
-      <img
-        class="lazy"
-        data-src="https://res.cdn.changbaimg.com/asset/yunying/anniversary-anchor2023/bg-header.ab7855bd.png" />
-      <img
-        class="lazy"
-        data-src="https://res.cdn.changbaimg.com/asset/yunying/anniversary-anchor2023/bg-header.ab7855bd.png" />
-      <img
-        class="lazy"
-        data-src="https://res.cdn.changbaimg.com/asset/yunying/anniversary-anchor2023/bg-header.ab7855bd.png" />
-      <img
-        class="lazy"
-        data-src="https://res.cdn.changbaimg.com/asset/yunying/anniversary-anchor2023/bg-header.ab7855bd.png" />
-      <img
-        class="lazy"
-        data-src="https://res.cdn.changbaimg.com/asset/yunying/anniversary-anchor2023/bg-header.ab7855bd.png" />
-      <img
-        class="lazy"
-        data-src="https://res.cdn.changbaimg.com/asset/yunying/anniversary-anchor2023/bg-header.ab7855bd.png" />
-      <img
-        class="lazy"
-        data-src="https://res.cdn.changbaimg.com/asset/yunying/anniversary-anchor2023/bg-header.ab7855bd.png" />
-      <img
-        class="lazy"
-        data-src="https://res.cdn.changbaimg.com/asset/yunying/anniversary-anchor2023/bg-header.ab7855bd.png" />
-      <img
-        class="lazy"
-        data-src="https://res.cdn.changbaimg.com/asset/yunying/anniversary-anchor2023/bg-header.ab7855bd.png" />
-      <img
-        class="lazy"
-        data-src="https://res.cdn.changbaimg.com/asset/yunying/anniversary-anchor2023/bg-header.ab7855bd.png" />
-      <img
-        class="lazy"
-        data-src="https://res.cdn.changbaimg.com/asset/yunying/anniversary-anchor2023/bg-header.ab7855bd.png" />
-    </div>
+  img {
+    border: 2px solid peru;
+    width: 100px;
+    height: 200px;
+  }
+</style>
 
-    <script>
-      // IntersectionObserver实现
-      // const imgs = document.querySelectorAll(".lazy");
-      // const intersect = new IntersectionObserver((entries, observe) => {
-      //   entries.forEach((entry) => {
-      //     if (entry.isIntersecting) {
-      //       const img = entry.target;
-      //       img.src = img.dataset.src;
-      //       img.classList.remove("lazy");
-      //       intersect.unobserve(img);
-      //     }
-      //   });
-      // });
-      // imgs.forEach((img) => {
-      //   intersect.observe(img);
-      // });
+<body>
+  <div class="container">
+    <img class="lazy"
+      data-src="https://res.cdn.changbaimg.com/asset/yunying/anniversary-anchor2023/bg-header.ab7855bd.png" />
+    <img class="lazy"
+      data-src="https://res.cdn.changbaimg.com/asset/yunying/anniversary-anchor2023/bg-header.ab7855bd.png" />
+    <img class="lazy"
+      data-src="https://res.cdn.changbaimg.com/asset/yunying/anniversary-anchor2023/bg-header.ab7855bd.png" />
+    <img class="lazy"
+      data-src="https://res.cdn.changbaimg.com/asset/yunying/anniversary-anchor2023/bg-header.ab7855bd.png" />
+    <img class="lazy"
+      data-src="https://res.cdn.changbaimg.com/asset/yunying/anniversary-anchor2023/bg-header.ab7855bd.png" />
+    <img class="lazy"
+      data-src="https://res.cdn.changbaimg.com/asset/yunying/anniversary-anchor2023/bg-header.ab7855bd.png" />
+    <img class="lazy"
+      data-src="https://res.cdn.changbaimg.com/asset/yunying/anniversary-anchor2023/bg-header.ab7855bd.png" />
+    <img class="lazy"
+      data-src="https://res.cdn.changbaimg.com/asset/yunying/anniversary-anchor2023/bg-header.ab7855bd.png" />
+    <img class="lazy"
+      data-src="https://res.cdn.changbaimg.com/asset/yunying/anniversary-anchor2023/bg-header.ab7855bd.png" />
+    <img class="lazy"
+      data-src="https://res.cdn.changbaimg.com/asset/yunying/anniversary-anchor2023/bg-header.ab7855bd.png" />
+    <img class="lazy"
+      data-src="https://res.cdn.changbaimg.com/asset/yunying/anniversary-anchor2023/bg-header.ab7855bd.png" />
+    <img class="lazy"
+      data-src="https://res.cdn.changbaimg.com/asset/yunying/anniversary-anchor2023/bg-header.ab7855bd.png" />
+    <img class="lazy"
+      data-src="https://res.cdn.changbaimg.com/asset/yunying/anniversary-anchor2023/bg-header.ab7855bd.png" />
+    <img class="lazy"
+      data-src="https://res.cdn.changbaimg.com/asset/yunying/anniversary-anchor2023/bg-header.ab7855bd.png" />
+    <img class="lazy"
+      data-src="https://res.cdn.changbaimg.com/asset/yunying/anniversary-anchor2023/bg-header.ab7855bd.png" />
+    <img class="lazy"
+      data-src="https://res.cdn.changbaimg.com/asset/yunying/anniversary-anchor2023/bg-header.ab7855bd.png" />
+    <img class="lazy"
+      data-src="https://res.cdn.changbaimg.com/asset/yunying/anniversary-anchor2023/bg-header.ab7855bd.png" />
+    <img class="lazy"
+      data-src="https://res.cdn.changbaimg.com/asset/yunying/anniversary-anchor2023/bg-header.ab7855bd.png" />
+    <img class="lazy"
+      data-src="https://res.cdn.changbaimg.com/asset/yunying/anniversary-anchor2023/bg-header.ab7855bd.png" />
+    <img class="lazy"
+      data-src="https://res.cdn.changbaimg.com/asset/yunying/anniversary-anchor2023/bg-header.ab7855bd.png" />
+    <img class="lazy"
+      data-src="https://res.cdn.changbaimg.com/asset/yunying/anniversary-anchor2023/bg-header.ab7855bd.png" />
+    <img class="lazy"
+      data-src="https://res.cdn.changbaimg.com/asset/yunying/anniversary-anchor2023/bg-header.ab7855bd.png" />
+    <img class="lazy" data-src="https://zos.alipayobjects.com/rmsportal/jkjgkEfvpUPVyRjUImniVslZfWPnJuuZ.png" />
+  </div>
 
-      // 通过
-      const container = document.querySelector('.container')
-      const imgs = document.querySelectorAll('.lazy')
-      const throttle = (fn, delay)=>{
-        let pre = new Date().getTime()
-        let next = pre + delay
-        return ()=>{
-          if(next - pre >= delay){
-            fn()
-            pre = next
-          }
-          next = new Date().getTime()
+  <script>
+    // IntersectionObserver实现
+    // const imgs = document.querySelectorAll(".lazy");
+    // const intersect = new IntersectionObserver((entries, observe) => {
+    //   entries.forEach((entry) => {
+    //     if (entry.isIntersecting) {
+    //       const img = entry.target;
+    //       img.src = img.dataset.src;
+    //       img.classList.remove("lazy");
+    //       intersect.unobserve(img);
+    //     }
+    //   });
+    // });
+    // imgs.forEach((img) => {
+    //   intersect.observe(img);
+    // });
+
+    // 通过
+    const container = document.querySelector('.container')
+    const imgs = document.querySelectorAll('.lazy')
+    const throttle = (fn, delay) => {
+      let pre = new Date().getTime()
+      let next = pre + delay
+      return () => {
+        if (next - pre >= delay) {
+          fn()
+          pre = next
         }
+        next = new Date().getTime()
       }
-      const rect = container.getBoundingClientRect()
+    }
+    const rect = container.getBoundingClientRect()
 
-      function isIntersect(element){    
-        const elementRect = element.getBoundingClientRect()        
-        if((elementRect.left >= rect.left && elementRect.left <= rect.left + rect.width) && (elementRect.top >= rect.top && elementRect.top <= rect.top + rect.height)){
-          return true
-        }
-        return false
+    function isIntersect (element) {
+      const elementRect = element.getBoundingClientRect()
+      if ((elementRect.left >= rect.left && elementRect.left <= rect.left + rect.width) && (elementRect.top >= rect.top && elementRect.top <= rect.top + rect.height)) {
+        return true
       }
-      const compare = throttle(()=>{
-          imgs.forEach(img=>{
-            if(isIntersect(img)){
-              img.src= img.dataset.src
-            }
-          })
-        },100)
-      compare()
-      container.addEventListener('scroll',compare
-      )
-    </script>
-  </body>
+      return false
+    }
+    const compare = throttle(() => {
+      imgs.forEach(img => {
+        if (isIntersect(img)) {
+          img.src = img.dataset.src
+        }
+      })
+    }, 100)
+    compare()
+    container.addEventListener('scroll', compare
+    )
+  </script>
+</body>
+
 </html>
