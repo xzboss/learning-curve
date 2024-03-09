@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+
+<body>
+	<div class="demo">demo</div>
+	<button onclick="change()">click</button>
+	<script>
+		function insert () {
+			requestAnimationFrame(() => {
+				console.log('ok')
+				insert()
+			})
+		}
+		// insert()
+
+		function change (params) {
+			console.log('11111111111111111111111111111111111111111111')
+			const demo = document.getElementsByClassName('demo')[0]
+			demo.style.color = 'red'
+			demo.style.backgroundColor = 'green'
+			const l = demo.offsetWidth
+			console.log(demo.offsetWidth)
+			demo.style.width = '200px'
+			console.log(demo.offsetWidth)
+			demo.style.color = 'green'
+			demo.style.backgroundColor = 'red'
+			console.log('22222222222222222222222222222222222222222222')
+		}
+	</script>
+</body>
+
+</html>
