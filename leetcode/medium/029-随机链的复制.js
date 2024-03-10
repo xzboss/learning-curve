@@ -33,38 +33,36 @@ function Node (val, next, random) {
  */
 var copyRandomList = function (head) {
 	if (head === null) return null
-	const map = new Map()
 	let cur = head
+	const map = new Map()
 	while (cur) {
 		map.set(cur, new Node(cur.val))
 		cur = cur.next
-
 	}
 	cur = head
 	while (cur) {
-		const a = map.get(cur)
-		a.next = map.get(cur.next);
-		a.random = map.get(cur.random);
+		map.get(cur).next = map.get(cur.next) || null;
+		map.get(cur).random = map.get(cur.random) || null;
 		cur = cur.next
 	}
 	return map.get(head)
 };
-const node2 = new Node(1, null, null )
-
-const node1 = new Node(1, node2, node2)
-copyRandomList(node1)
 
 
-var copyRandomList = function(head, cachedNode = new Map()) {
+var copyRandomList = function (head, cachedNode = new Map()) {
 	if (head === null) {
-			return null;
+		return null;
 	}
 	if (!cachedNode.has(head)) {
-			cachedNode.set(head, {val: head.val});
-			Object.assign(cachedNode.get(head), {next: copyRandomList(head.next, cachedNode), random: copyRandomList(head.random, cachedNode)})
+		cachedNode.set(head, { val: head.val });
+		Object.assign(cachedNode.get(head),
+			{ next: copyRandomList(head.next, cachedNode), random: copyRandomList(head.random, cachedNode) })
 	}
 	return cachedNode.get(head);
 }
+
+// 还有一个方法可以做到空间 O（1），就是将克隆节点分别穿插 旧1 -> 新1 -> 旧2 -> 新2
+// 再遍历确定 新结点的next，random
 
 
 
