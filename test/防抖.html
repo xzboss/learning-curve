@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+
+<body>
+	<button onclick="a()"></button>
+	<script>
+		function debounce (func, delay) {
+			let result, timer
+			return function (...args) {
+				if (timer) {
+					clearInterval(timer)
+				}
+				const context = this
+				timer = setTimeout(function () {
+					result = func.apply(context, args) // 这里不用context，回调就得是箭头函数，原理不言而喻
+					timer = null
+				}, delay)
+				return result
+			}
+		}
+		const a = debounce(() => {
+			console.log(1)
+		}, 1000)
+	</script>
+</body>
+
+</html>
