@@ -19,32 +19,28 @@
  * @param {number} x
  * @return {ListNode}
  */
-var partition = function(head, x) {
-	const dummy = {next:head}
-	let cur = head
-	let pre = dummy
-	let areaHead = null
-	while(cur && cur.next){
-		if(cur.val >= x) {
-			areaHead = cur
-			while(cur.next && cur.next.val >= x){
-				cur = cur.next
-			}
-			if(cur.next){
-				pre.next = cur.next
-				const temp = cur.next.next
-				cur.next.next = areaHead
-				cur.next = temp
-				cur = cur.next
-				pre = pre.next
-			}
-		}else{
-			pre = pre.next
-			cur = cur.next
+
+// 维护两个链表，然后拼接就行了
+var partition = function (head, x) {
+	let large = { next: null }
+	let small = { next: null }
+	const largeH = large
+	const smallH = small
+	while (head) {
+		if (head.val >= x) {
+			large.next = head
+			large = large.next
+		} else {
+			small.next = head
+			small = small.next
 		}
+		head = head.next
 	}
-	return dummy.next
+	large.next = null
+	small.next = largeH.next
+	return smallH.next
 };
+//[undefined,1,4,3,2,5,2]
 
 
 
