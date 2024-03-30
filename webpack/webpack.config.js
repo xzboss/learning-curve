@@ -11,7 +11,7 @@ module.exports = {
 		path: path.resolve(__dirname, 'dist')
 	},
 	devServer: {
-		hot: true, // 启用HMR
+		hot: false, // 启用HMR
 		// 其他开发服务器设置...
 	},
 	plugins: [
