@@ -14,46 +14,31 @@
  * @return {number[][]}
  */
 // BFS
-var levelOrder = function levelOrder(root) {
+var zigzagLevelOrder = function zigzagLevelOrder(root) {
   if (!root) return [];
-  var res = [];
+  var result = [];
   var queue = [root];
+  var flag = true;
 
   while (queue.length) {
     var len = queue.length;
-    var temp = [];
+    var tempArr = [];
 
     for (var i = 0; i < len; i++) {
       var node = queue.shift();
-      temp.push(node.val);
       node.left && queue.push(node.left);
       node.right && queue.push(node.right);
+
+      if (flag) {
+        tempArr.push(node.val);
+      } else {
+        tempArr.unshift(node.val);
+      }
     }
 
-    res.push(temp);
+    flag = !flag;
+    result.push(tempArr);
   }
 
-  return res;
-}; //DFS
-
-
-var levelOrder = function levelOrder(root) {
-  var res = [];
-
-  function dfs(root) {
-    var depth = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 0;
-    if (!root) return;
-
-    if (res[depth]) {
-      res[depth].push(root.val);
-    } else {
-      res[depth] = [root.val];
-    }
-
-    dfs(root.left, depth + 1);
-    dfs(root.right, depth + 1);
-  }
-
-  dfs(root);
-  return res;
+  return result;
 }; //module.exports =
