@@ -5,14 +5,53 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Document</title>
-	<style>
+	<!-- <style>
 		@import url('http://127.0.0.1:4523/m1/1314808-0-default/css/import');
 	</style>
-	<link rel="stylesheet" href="./link.css">
+	<link rel="stylesheet" href="./link.css"> -->
+	<style>
+		.container {
+			position: relative;
+			width: 100%;
+			border: 2px solid rgb(9, 20, 228);
+			height: 300px;
+		}
+
+		main {
+			position: absolute;
+			left: 50px;
+			right: 50px;
+			height: 100%;
+			background-color: bisque;
+		}
+	</style>
 </head>
 
 <body>
-	<div>hello</div>
+	<div class="container">
+		<main>main</main>
+	</div>
+	<script>
+		function a () {
+			let c = 0
+			return [function () {
+				c++
+			}, function () {
+				console.log(c)
+			}]
+		}
+		const [r1, r2] = a()
+		r1()
+		r1()
+
+		r1()
+
+		r1()
+
+		r1()
+
+		r2()
+	</script>
 </body>
 
 </html>
