@@ -1,4 +1,4 @@
-function test(func) {
+function test (func) {
   const start = new Date().getTime()
   func()
   const end = new Date().getTime()
@@ -73,3 +73,28 @@ function test(func) {
 //     }
 //   }
 // })
+// let str = ''
+// for (let i = 0; i < 10000000; i++) {
+//   str += 'A'
+// }
+
+// test(() => {
+//   str.slice(1, 9)
+// })
+// test(() => {
+//   let n = 0
+//   for (let i = 0; i < str.length; i++) {
+//     n += str[i]
+//   }
+// })
+let str = new Array(10000000).fill(1)
+
+test(() => {
+  str.slice(1, str.length - 1)
+})
+test(() => {
+  let n = 0
+  for (let i = 0; i < str.length; i++) {
+    n += str[i]
+  }
+})
