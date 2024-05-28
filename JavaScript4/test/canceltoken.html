@@ -27,7 +27,7 @@
     })
   })
 </script> -->
-<button id="start">Start</button>
+<!-- <button id="start">Start</button>
 <button id="cancel">Cancel</button>
 <script>
   const startBtn = document.querySelector('#start')
@@ -52,4 +52,27 @@
       console.log(result)
     })
   })
+</script> -->
+
+<button id="start">Start</button>
+<button id="cancel">Cancel</button>
+<script>
+  const startBtn = document.querySelector('#start')
+  const cancelBtn = document.querySelector('#cancel')
+  class CouldCancelPromise {
+    constructor(executor) {
+      this.notifyHandlers = []
+      return new Promise((resolve, reject) => {
+        return executor(resolve, reject, progress => {
+          this.notifyHandlers.forEach(notify => {
+            notify(progress)
+          })
+        })
+      })
+    }
+    notify(fun) {
+      this.notifyHandlers.push(fun)
+      return this
+    }
+  }
 </script>

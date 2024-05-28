@@ -35,14 +35,49 @@
 // p.catch(reason => setTimeout(console.log, 0, reason)) // 1 （之后不再处理2
 
 //期约组合
-const add_2 = x => x + 2
-const add_4 = x => x + 4
-const add_8 = x => x + 8
-const fns = [add_2, add_4, add_8]
-const compose = fns => {
-  return x => fns.reduce((p, fn) => p.then(fn), Promise.resolve(x))
+// const add_2 = x => x + 2
+// const add_4 = x => x + 4
+// const add_8 = x => x + 8
+// const fns = [add_2, add_4, add_8]
+// const compose = fns => {
+//   return x => fns.reduce((p, fn) => p.then(fn), Promise.resolve(x))
+// }
+// const flow = compose(fns)
+// flow(1).then(result => {
+//   console.log(result)
+// })
+
+class ProgressPromise extends Promise{
+  constructor(executor) {
+    const notifyHandlers = []
+    super((resolve, reject) => {
+       return executor(resolve, reject, progress => {
+        notifyHandlers.forEach(notify => {
+          notify(progress)
+        })
+      })
+    })
+    this.notifyHandlers = notifyHandlers
+  }
+  notify = function (fun) {
+    this.notifyHandlers.push(fun)
+    return this
+  }
 }
-const flow = compose(fns)
-flow(1).then(result => {
-  console.log(result)
+const p = new ProgressPromise((resolve, reject, notify) => {
+  function getData(step) {
+    if (step < 5) {
+      notify(`${step * 20} %.........`)
+      setTimeout(getData, 1000, step + 1)
+    } else {
+      resolve('done')
+    }
+  }
+  getData(0)
+})
+p.notify(progress => {
+  console.log(progress)
+})
+p.then(res => {
+  console.log(res)
 })
