@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>dhui</h1>
+    <script>
+        window.devicePixelRatio = 2
+        console.log(window)
+        // console.log(window.parent === window.top, window.top === window.self ,window.self === window)
+        // const {contentWindow:iWindow_1} = document.querySelector('#ifs-1')
+        // console.log(iWindow_1.self === window)
+        // 打开一个新窗口并尝试移动它
+var newWindow = window.open("", "newWindow", "width=400,height=400");
+newWindow.moveBy(20, 100);
+newWindow.document.write("<p>This is a new window moved to a specific screen location.</p>");
+
+    </script>
+</body>
+</html>
