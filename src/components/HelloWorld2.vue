@@ -1,10 +1,11 @@
 <template lang="">
   <div>
-    p
+    
   </div>
 </template>
 <script setup>
-import { useUserStore } from '../store';
+
 </script>
 <style lang="">
+  
 </style>
