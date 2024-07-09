@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<books>
+  <book>
+    <title>百年孤独</title>
+    <author>加布里埃尔·加西亚·马尔克斯</author>
+    <year>1967</year>
+    <genre>小说</genre>
+  </book>
+  <book>
+    <title>追忆似水年华</title>
+    <author>马塞尔·普鲁斯特</author>
+    <year>1913-1927</year>
+    <genre>文学</genre>
+  </book>
+  <book>
+    <title>悲惨世界</title>
+    <author>雨果</author>
+    <year>1862</year>
+    <genre>小说</genre>
+  </book>
+</books>

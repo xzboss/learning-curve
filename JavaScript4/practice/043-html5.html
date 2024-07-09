@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    .box {
+      position: absolute;
+      top: 200px;
+      left: 100px;
+      width: 200px;
+      height: 400px;
+      overflow-y: auto;
+      border: 1px solid red;
+    }
+    h1 {
+      width: 100px;
+    }
+  </style>
+  <body> 
+    <div class="box">
+    </div>
+    <iframe src="./038-bom.html" frameborder="0" id="ifm"></iframe>
+   <script>
+    const box = document.querySelector('.box')
+    const msg = ifm.contentDocument.body.innerHTML
+    console.log(ifm.contentDocument.body,'/')
+   </script>
+    <!-- <script>
+      const box = document.querySelector('.box')
+      const h1 = document.querySelector('h1')
+      console.log(box.contains(h1))
+      console.log(box.compareDocumentPosition(h1))
+      box.focus()
+    </script> -->
+    <!-- <script>
+      const box = document.querySelector('.box')
+      for (let i = 0; i < 20; i++) {
+        const h1 = document.createElement('h1')
+        h1.textContent = '1'
+        h1.style.border = '1px solid green'
+        box.appendChild(h1)
+      }
+      const h1 = document.createElement('input')
+      h1.textContent = '1'
+      h1.style.border = '1px solid red'
+      box.appendChild(h1)
+      for (let i = 0; i < 20; i++) {
+        const h1 = document.createElement('h1')
+        h1.textContent = '1'
+        h1.style.border = '1px solid green'
+        box.appendChild(h1)
+      }
+      setTimeout(()=>{
+        h1.focus()
+      },1000)
+    </script> -->
+  </body>
+</html>
