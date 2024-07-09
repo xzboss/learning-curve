@@ -1,10 +1,11 @@
-<template lang="">
+<template>
   <div>
-    p
+    <h1>-){{store.username}}(-</h1>
   </div>
 </template>
 <script setup>
 import { useUserStore } from '../store';
+const store = useUserStore()
 </script>
-<style lang="">
+<style>
 </style>

@@ -12,7 +12,7 @@ export const useUserStore = defineStore('user', {
 	},
 	actions: {
 		updateUsername (newUsername) {
-			this.state.username = newUsername
+			this.username = newUsername
 		}
 	}
 
