@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- <script>
+      const obj = {
+        [Symbol.toPrimitive](hint) {
+          switch (hint) {
+            case "string":
+              return "obj-toPrimitive-string";
+            case "number":
+              return 1;
+            case "default":
+              return "obj-toPrimitive-default";
+          }
+        },
+      };
+      console.log(`${obj}`); // obj-toPrimitive-string
+      console.log(+obj);     // 1
+      console.log(obj + ""); // obj-toPrimitive-default
+    </script> -->
+    <script>
+        function foo(op){
+            switch(op){
+                case 1:console.log(1);
+                case 2:console.log(2);
+            }
+        }
+        foo(1)
+    </script>
+  </body>
+</html>
