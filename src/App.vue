@@ -1,19 +1,15 @@
 <script setup>
 import HelloWorld from './components/HelloWorld.vue'
 import HelloWorld2 from './components/HelloWorld2.vue'
-import { useMemo } from './hooks/useMemo';
-const data = useMemo(()=>{
-  return {
-    hello:'hello'
-  }
-})
+import DefineProps from './components/DefineProps.vue';
 
 </script>
 
 <template>
   <HelloWorld />
   <HelloWorld2 />
-  <div>{{ data }}</div>
+  <DefineProps/>
+  <div></div>
 </template>
 
 <style scoped>
