@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script></script>
+    <script>
+      const number = 1;
+      const boolean = true;
+      const symbol = Symbol();
+      const bigint = BigInt("10000");
+      const string = "xx";
+      const obj = {
+        toString() {
+          return "obj-toString";
+        },
+      };
+      Number.prototype.toString = function () {
+        return "Number-toString";
+      };
+      Boolean.prototype.toString = function () {
+        return "Boolean-toString";
+      };
+      Symbol.prototype.toString = function () {
+        return "Symbol-toString";
+      };
+      BigInt.prototype.toString = function () {
+        return "BigInt-toString";
+      };
+      Object.prototype.toString = function () {
+        return "Object-toString";
+      };
+      console.log(
+        `${number}__${boolean}__${bigint}__${string}__${obj}__${null}__${undefined}`
+      ); // 1__true__10000__xx__obj-toString__null__undefined
+      console.log(symbol.toString()); // Symbol-toString
+        // console.log(symbol + ""); // TypeError: Cannot convert a Symbol value to a string
+        console.log(Object.prototype[Symbol.toPrimitive])
+    </script>
+  </body>
+</html>
