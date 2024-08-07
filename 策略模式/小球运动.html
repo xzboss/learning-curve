@@ -1,0 +1,13 @@
+<body>
+  <div style="position: absolute; background: blue" id="div">我是 div</div>
+</body>
+<script>
+  var tween = {
+    linear: function (time, startPos, endPos, duration) {
+      return (endPos * time) / duration + startPos;
+    },
+    easeIn: function (time, startPos, endPos, duration) {
+      return endPos * (time /= duration) * time + startPos;
+    },
+  };
+</script>
